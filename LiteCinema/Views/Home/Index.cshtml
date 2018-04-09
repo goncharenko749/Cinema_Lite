@@ -1,0 +1,27 @@
+﻿@model IEnumerable<LiteCinema.Models.Film>
+@{
+    ViewData["Title"] = "Список фильмов";
+}
+
+<h3>Фильмы</h3>
+<table class="table-bordered">
+    <!-----col width="150" height="70" valign="top"----->
+    <tr>
+        <td><b> Название </b></td>
+        <td><b> Описание </b></td>
+        <td><b> Производство </b></td>
+        <td><b> Цена, BYN </b></td>
+        <td></td>
+    </tr>
+    @foreach (var film in Model)
+            {
+        <!-----col width="200" height="70" valign="top"---->
+        <tr>
+            <td>@film.Name</td>
+            <td>@film.Description</td>
+            <td>@film.Country</td>
+            <td>@film.Price</td>
+            <td><a href="~/Home/Buy/@film.Id">Купить</a></td>
+        </tr>
+    }
+</table>v
